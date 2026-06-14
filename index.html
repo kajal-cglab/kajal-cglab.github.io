@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kajal Mandal — Curriculum Vitae</title>
+<meta name="description" content="Kajal Mandal — PhD Scholar in Computational Genomics, Plant Molecular Biology and Plant–Microbe Interactions, CSIR-IICB Kolkata.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F3F4F0;
+    --surface:#FFFFFF;
+    --ink:#16241F;
+    --ink-soft:#4A5751;
+    --ink-faint:#8A958F;
+    --teal:#2C6E68;
+    --teal-soft:#E1ECE9;
+    --gold:#C9952C;
+    --gold-soft:#F5EAD2;
+    --line:#DEDFD9;
+    --sidebar-w:300px;
+    --font-display:'Fraunces', Georgia, serif;
+    --font-body:'IBM Plex Sans', -apple-system, sans-serif;
+    --font-mono:'IBM Plex Mono', monospace;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ -webkit-font-smoothing:antialiased; }
+
+  body{
+    font-family:var(--font-body);
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    font-size:16px;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    html{ scroll-behavior:smooth; }
+    .tag, .btn, .side-nav a, .pub-link{ transition:background 0.15s ease, color 0.15s ease, border-color 0.15s ease; }
+  }
+
+  :focus-visible{ outline:2px solid var(--teal); outline-offset:3px; border-radius:2px; }
+
+  a{ color:var(--teal); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+
+  img,canvas{ display:block; max-width:100%; }
+
+  /* ---------- Sidebar ---------- */
+  .sidebar{
+    position:fixed; top:0; left:0;
+    width:var(--sidebar-w); height:100vh;
+    background:var(--ink); color:#ECEAE3;
+    display:flex; flex-direction:column;
+    padding:40px 32px; overflow-y:auto;
+    z-index:50;
+  }
+
+  .brand{ display:flex; align-items:flex-start; gap:14px; }
+
+  .monogram{
+    flex:none; width:44px; height:44px;
+    border:1px solid var(--gold);
+    color:var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-display); font-weight:600; font-size:1.05rem;
+    letter-spacing:0.02em;
+  }
+
+  .brand-text{ flex:1; }
+
+  .side-name{
+    font-family:var(--font-display); font-weight:600;
+    font-size:1.3rem; line-height:1.25; color:#fff;
+  }
+
+  .side-title{
+    font-size:0.85rem; color:var(--gold);
+    font-style:italic; margin-top:2px;
+  }
+
+  .nav-toggle{
+    display:none; flex:none;
+    width:32px; height:32px;
+    background:transparent; border:1px solid rgba(255,255,255,0.25);
+    border-radius:3px; cursor:pointer;
+    flex-direction:column; align-items:center; justify-content:center; gap:5px;
+  }
+  .nav-toggle span{ display:block; width:16px; height:1.5px; background:#ECEAE3; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){ transform:translateY(3.25px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){ transform:translateY(-3.25px) rotate(-45deg); }
+
+  .collapsible{ display:flex; flex-direction:column; flex:1; }
+
+  .side-affil{
+    margin-top:24px; font-size:0.85rem; color:#C9CFCB; line-height:1.6;
+  }
+
+  .side-nav{
+    display:flex; flex-direction:column;
+    margin-top:32px; border-top:1px solid rgba(255,255,255,0.12);
+    padding-top:8px;
+  }
+
+  .side-nav a{
+    color:#C9CFCB; font-size:0.92rem;
+    padding:9px 4px; border-left:2px solid transparent;
+    padding-left:14px;
+  }
+  .side-nav a:hover{ color:#fff; text-decoration:none; }
+  .side-nav a.active{
+    color:#fff; border-left-color:var(--gold);
+    font-weight:500;
+  }
+
+  .side-footer{
+    margin-top:auto; padding-top:32px;
+    border-top:1px solid rgba(255,255,255,0.12);
+    font-size:0.82rem; color:#C9CFCB; line-height:1.6;
+  }
+  .side-footer .faint{ color:#8B968F; }
+  .side-footer p + p{ margin-top:8px; }
+
+  /* ---------- Main ---------- */
+  .main{ margin-left:var(--sidebar-w); }
+
+  .section{
+    padding:72px 56px;
+    border-bottom:1px solid var(--line);
+    scroll-margin-top:24px;
+  }
+  .section:last-of-type{ border-bottom:none; }
+  .section-inner{ max-width:760px; }
+
+  .eyebrow{
+    font-family:var(--font-mono); font-size:0.78rem;
+    letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--teal); margin-bottom:14px;
+  }
+
+  .section-title{
+    font-family:var(--font-display); font-weight:600;
+    font-size:clamp(1.6rem, 3vw, 2.1rem);
+    margin-bottom:28px; color:var(--ink);
+  }
+
+  .lede{ color:var(--ink-soft); max-width:62ch; }
+  .lede + .lede{ margin-top:16px; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:88px 56px;
+    display:grid; grid-template-columns:1.15fr 0.85fr;
+    gap:56px; align-items:center;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-text .eyebrow{ margin-bottom:18px; }
+  .hero-heading{
+    font-family:var(--font-display); font-weight:500;
+    font-size:clamp(1.9rem, 4vw, 2.9rem);
+    line-height:1.25; color:var(--ink);
+  }
+  .hero-heading em{ font-style:italic; color:var(--teal); }
+  .hero-sub{
+    margin-top:20px; color:var(--ink-soft); max-width:48ch;
+    font-size:1.02rem;
+  }
+  .hero-ctas{ margin-top:32px; display:flex; gap:14px; flex-wrap:wrap; }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--font-mono); font-size:0.85rem;
+    padding:11px 20px; border-radius:3px;
+    border:1px solid var(--ink);
+  }
+  .btn-primary{ background:var(--ink); color:#fff; }
+  .btn-primary:hover{ background:var(--teal); border-color:var(--teal); text-decoration:none; }
+  .btn-secondary{ background:transparent; color:var(--ink); }
+  .btn-secondary:hover{ background:var(--surface); text-decoration:none; }
+
+  .hic-wrap{ width:100%; }
+  .hic-canvas{
+    width:100%; aspect-ratio:1/1;
+    border:1px solid var(--line); border-radius:4px;
+    background:var(--surface);
+  }
+  .hic-caption{
+    margin-top:10px; font-family:var(--font-mono);
+    font-size:0.74rem; color:var(--ink-faint); line-height:1.5;
+  }
+
+  /* ---------- Research roles ---------- */
+  .role{ margin-bottom:44px; }
+  .role:last-child{ margin-bottom:0; }
+  .role-head{
+    display:flex; flex-wrap:wrap; align-items:baseline;
+    justify-content:space-between; gap:8px 16px;
+  }
+  .role-head h3{
+    font-family:var(--font-display); font-weight:600;
+    font-size:1.15rem; color:var(--ink);
+  }
+  .role-date{
+    font-family:var(--font-mono); font-size:0.8rem;
+    color:var(--teal); white-space:nowrap;
+  }
+  .role-org{ color:var(--ink-soft); margin-top:4px; font-size:0.95rem; }
+  .role-topic{
+    margin-top:14px; font-size:0.95rem; color:var(--ink-soft);
+    background:var(--surface); border-left:3px solid var(--gold);
+    padding:12px 16px; border-radius:0 3px 3px 0;
+  }
+  .role-topic em{ font-style:normal; font-weight:500; color:var(--ink); }
+
+  .obj-list{ margin-top:18px; list-style:none; }
+  .obj-list li{
+    position:relative; padding-left:20px; margin-bottom:10px;
+    font-size:0.94rem; color:var(--ink-soft); line-height:1.65;
+  }
+  .obj-list li::before{
+    content:""; position:absolute; left:0; top:0.65em;
+    width:8px; height:1.5px; background:var(--teal);
+  }
+
+  .subsection-label{
+    font-family:var(--font-mono); font-size:0.78rem;
+    text-transform:uppercase; letter-spacing:0.1em;
+    color:var(--ink-faint); margin:48px 0 18px;
+  }
+  .subsection-label:first-of-type{ margin-top:0; }
+
+  /* ---------- Tags ---------- */
+  .tags{ display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+  .tag{
+    font-family:var(--font-mono); font-size:0.82rem;
+    background:var(--teal-soft); color:var(--teal);
+    border:1px solid transparent;
+    padding:7px 14px; border-radius:30px;
+  }
+
+  /* ---------- Education ---------- */
+  .edu-item{ margin-bottom:32px; }
+  .edu-item:last-child{ margin-bottom:0; }
+  .edu-result{
+    margin-top:8px; font-family:var(--font-mono); font-size:0.85rem;
+    color:var(--gold);
+  }
+
+  /* ---------- Awards ---------- */
+  .award-list{ list-style:none; }
+  .award-row{
+    display:grid; grid-template-columns:90px 1fr;
+    gap:20px; padding:14px 0;
+    border-bottom:1px solid var(--line);
+    font-size:0.95rem; align-items:baseline;
+  }
+  .award-row:last-child{ border-bottom:none; }
+  .award-year{
+    font-family:var(--font-mono); color:var(--teal); font-size:0.85rem;
+  }
+  .award-desc{ color:var(--ink-soft); }
+  .award-desc strong{ color:var(--ink); font-weight:600; }
+
+  /* ---------- Skills ---------- */
+  .skill-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+  }
+  .skill-card{
+    background:var(--surface); border:1px solid var(--line);
+    border-radius:4px; padding:22px 20px;
+  }
+  .skill-card h3{
+    font-family:var(--font-mono); font-size:0.78rem;
+    text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--gold); margin-bottom:12px;
+  }
+  .skill-card ul{ list-style:none; }
+  .skill-card li{
+    font-size:0.92rem; color:var(--ink-soft);
+    padding:5px 0; border-top:1px solid var(--line);
+  }
+  .skill-card li:first-child{ border-top:none; padding-top:0; }
+
+  .memberships{ margin-top:36px; }
+  .memberships .subsection-label{ margin-bottom:10px; }
+  .memberships ul{ list-style:none; display:flex; flex-direction:column; gap:8px; }
+  .memberships li{
+    font-size:0.95rem; color:var(--ink-soft); padding-left:20px; position:relative;
+  }
+  .memberships li::before{
+    content:""; position:absolute; left:0; top:0.65em;
+    width:8px; height:1.5px; background:var(--gold);
+  }
+
+  /* ---------- Publications ---------- */
+  .pub-list{ list-style:none; counter-reset:pub; }
+  .pub-item{
+    counter-increment:pub;
+    display:grid; grid-template-columns:46px 1fr;
+    gap:18px; padding:20px 0; border-bottom:1px solid var(--line);
+    break-inside:avoid;
+  }
+  .pub-item:first-child{ padding-top:0; }
+  .pub-item:last-child{ border-bottom:none; }
+  .pub-num{
+    font-family:var(--font-mono); font-size:0.8rem; color:var(--ink-faint);
+  }
+  .pub-num::before{ content:counter(pub) "."; }
+  .pub-text{ font-size:0.95rem; color:var(--ink-soft); }
+  .pub-text .pub-authors{ color:var(--ink); }
+  .pub-text .pub-year{
+    font-family:var(--font-mono); color:var(--teal); font-size:0.85rem;
+  }
+  .pub-text .pub-journal{ font-style:italic; color:var(--ink); }
+  .pub-badge{
+    display:inline-block; margin-left:8px;
+    font-family:var(--font-mono); font-size:0.7rem;
+    color:var(--gold); border:1px solid var(--gold-soft);
+    background:var(--gold-soft); border-radius:30px; padding:2px 9px;
+    vertical-align:middle;
+  }
+  .pub-link{ font-family:var(--font-mono); font-size:0.85rem; }
+
+  /* ---------- Contact ---------- */
+  .contact-grid{
+    display:grid; grid-template-columns:repeat(2, minmax(180px,1fr));
+    gap:24px 40px; margin-top:28px;
+  }
+  .contact-item dt{
+    font-family:var(--font-mono); font-size:0.75rem;
+    text-transform:uppercase; letter-spacing:0.1em;
+    color:var(--ink-faint); margin-bottom:6px;
+  }
+  .contact-item dd{ font-size:0.98rem; color:var(--ink-soft); }
+  .contact-item dd em{ color:var(--ink-faint); font-style:italic; }
+
+  .print-note{
+    margin-top:40px; font-size:0.85rem; color:var(--ink-faint);
+    border-top:1px solid var(--line); padding-top:20px;
+  }
+  .print-note kbd{
+    font-family:var(--font-mono); background:var(--surface);
+    border:1px solid var(--line); border-radius:3px;
+    padding:1px 6px; font-size:0.8rem;
+  }
+
+  .footer-bar{
+    padding:28px 56px; font-family:var(--font-mono); font-size:0.78rem;
+    color:var(--ink-faint); display:flex; justify-content:space-between;
+    flex-wrap:wrap; gap:8px;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    .sidebar{
+      width:100%; height:auto; flex-direction:row;
+      align-items:center; justify-content:space-between;
+      padding:16px 20px; flex-wrap:wrap;
+      position:fixed;
+    }
+    .collapsible{
+      flex-basis:100%; display:none; margin-top:16px;
+    }
+    .sidebar.open .collapsible{ display:flex; }
+    .nav-toggle{ display:flex; }
+    .side-footer{ margin-top:24px; padding-top:24px; }
+
+    .main{ margin-left:0; padding-top:72px; }
+    .hero{ grid-template-columns:1fr; padding:48px 24px; gap:36px; }
+    .hic-wrap{ max-width:340px; }
+    .section{ padding:48px 24px; }
+    .skill-grid{ grid-template-columns:1fr; }
+    .contact-grid{ grid-template-columns:1fr; }
+    .footer-bar{ padding:24px; }
+  }
+
+  /* ---------- Print ---------- */
+  @media print{
+    .sidebar, .nav-toggle{ display:none; }
+    .main{ margin-left:0; }
+    body{ background:#fff; }
+    .section{ padding:24px 0; border-bottom:1px solid #ddd; }
+    .hero{ padding:0 0 24px; grid-template-columns:1fr; }
+    .hic-wrap{ display:none; }
+    .btn{ display:none; }
+    a{ color:var(--ink); text-decoration:underline; }
+  }
+</style>
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="monogram" aria-hidden="true">KM</div>
+    <div class="brand-text">
+      <p class="side-name">Kajal Mandal</p>
+      <p class="side-title">PhD Scholar</p>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sideCollapsible">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="collapsible" id="sideCollapsible">
+    <p class="side-affil">
+      CSIR–Indian Institute of Chemical Biology (CSIR-IICB), Kolkata, West Bengal, India<br>
+      Academy of Scientific and Innovative Research (AcSIR), Ghaziabad, U.P., India
+    </p>
+
+    <nav class="side-nav" aria-label="Section navigation">
+      <a href="#profile">Profile</a>
+      <a href="#research">Research</a>
+      <a href="#education">Education</a>
+      <a href="#awards">Awards &amp; Fellowships</a>
+      <a href="#skills">Skills</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="side-footer">
+      <p>Computational Genomics Lab</p>
+      <p>Supervisor — Prof. Sucheta Tripathy<br><span class="faint">Chief Scientist, CSIR-IICB</span></p>
+    </div>
+  </div>
+</aside>
+
+<main class="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-text">
+      <p class="eyebrow">PhD Research · CSIR-IICB, Kolkata</p>
+      <h1 class="hero-heading">
+        Mapping the <em>three-dimensional genome</em> of a plant-killing oomycete — to understand how it causes disease, and how that knowledge can protect the crops it targets.
+      </h1>
+      <p class="hero-sub">
+        Computational genomics and plant molecular biology researcher working at the
+        intersection of host–pathogen genomics, chromatin architecture and small RNA
+        regulation, with <em>Phytophthora capsici</em> as a central model system.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#publications">View publications</a>
+        <a class="btn btn-secondary" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hic-wrap">
+        <canvas class="hic-canvas" id="hicCanvas" aria-hidden="true"></canvas>
+        <p class="hic-caption">Illustrative chromatin contact map — the kind of data structure at the centre of this research, where blocks of high contact frequency along the diagonal correspond to topologically associating domains.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFILE -->
+  <section class="section" id="profile">
+    <div class="section-inner">
+      <p class="eyebrow">Research Profile</p>
+      <h2 class="section-title">Overview</h2>
+      <p class="lede">
+        I am a computational genomics and molecular biology researcher with strong dual
+        expertise in dry-lab bioinformatics and wet-lab experimentation. My research
+        focuses on host–pathogen interactions, small RNA–mediated gene regulation,
+        three-dimensional genome architecture and genome evolution in oomycetes and fungi.
+      </p>
+      <p class="lede">
+        My work combines next-generation sequencing — Nanopore, PacBio, Illumina and Hi-C —
+        with advanced bioinformatics pipelines, including chromosome-scale genome
+        assemblies, comparative genomics, transcriptomics, 3D-genomics and regulatory
+        network analysis. In parallel, I apply wet-lab approaches such as RNA-seq
+        validation, gene expression analysis, protein and redox assays, pathogen
+        infection assays and transgenic plant studies to experimentally validate
+        computational discoveries.
+      </p>
+      <p class="lede">
+        Through an SERB- and UGC-funded fellowship spanning over seven years, I have
+        developed an integrated, systems-level understanding of host–pathogen
+        interactions, particularly in <em>Phytophthora</em>–plant systems. My long-term
+        goal is to use genome-driven biology to design next-generation strategies for
+        crop disease resistance and sustainable agriculture.
+      </p>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="section" id="research">
+    <div class="section-inner">
+      <p class="eyebrow">Positions &amp; Experience</p>
+      <h2 class="section-title">Research</h2>
+
+      <p class="subsection-label">Current Position</p>
+      <div class="role">
+        <div class="role-head">
+          <h3>Senior Research Fellow (SRF)</h3>
+          <span class="role-date">Jan 2021 – Present</span>
+        </div>
+        <p class="role-org">CSIR – Indian Institute of Chemical Biology, Kolkata</p>
+        <p class="role-topic">
+          <em>Doctoral research:</em> Unravelling <em>Phytophthora capsici</em> pathogenesis
+          via three-dimensional genome architecture and multi-omics approaches.
+        </p>
+        <ul class="obj-list">
+          <li>Identification and confirmation of pathogenic <em>Phytophthora capsici</em> isolates from southern Asia</li>
+          <li>Comparative genomics across <em>Phytophthora</em> species</li>
+          <li>Whole-genome sequencing of <em>P. capsici</em> using Illumina, Oxford Nanopore and Hi-C to generate a complete chromosome-scale genome assembly</li>
+          <li>Resolving the three-dimensional genome architecture of this pathogenic oomycete, including its chromatin organization and regulatory complexity</li>
+          <li>Generating high-quality genome assemblies for host tomato (Pusa Rubi) and chili (local variety) using PacBio sequencing</li>
+          <li>Transcriptomic profiling across <em>P. capsici</em> life stages and dual RNA-seq of infected hosts (tomato and chili) to map host–microbe interaction networks</li>
+          <li>Identifying and characterizing oomycete effector repertoires and their role in establishing infection</li>
+        </ul>
+      </div>
+
+      <p class="subsection-label">Previous Research Experience</p>
+      <div class="role">
+        <div class="role-head">
+          <h3>SERB-Funded Project Fellow</h3>
+          <span class="role-date">Apr 2018 – Jun 2020</span>
+        </div>
+        <p class="role-org">CSIR – Indian Institute of Chemical Biology, Kolkata</p>
+        <p class="role-topic">
+          <em>Project:</em> Identification of stress-responsive microRNAs under altered
+          glutathione (GSH) conditions and biotic stress.
+        </p>
+        <ul class="obj-list">
+          <li>Plant microRNA isolation, computational target analysis and downstream bioinformatic analysis</li>
+          <li>Cloning of genes in a bacterial system — genomic and plasmid DNA, RNA isolation, PCR, gel electrophoresis, gel extraction</li>
+          <li><em>Agrobacterium</em>-mediated plant transformation and transgenic plant development</li>
+          <li>qRT-PCR and downstream analysis</li>
+          <li>Protein isolation and 2D gel electrophoresis from plant samples</li>
+          <li>Plant tissue, organ and callus culture techniques</li>
+          <li>Maintaining plants in growth chambers and under field conditions</li>
+        </ul>
+      </div>
+
+      <p class="subsection-label">Research Interests</p>
+      <div class="tags">
+        <span class="tag">Plant–microbe interactions</span>
+        <span class="tag">Oomycete genomics &amp; evolution</span>
+        <span class="tag">Pathogen effector biology</span>
+        <span class="tag">Host immune suppression</span>
+        <span class="tag">Chromatin organization &amp; 3D genome biology</span>
+        <span class="tag">Small RNA–mediated regulation</span>
+        <span class="tag">Stress biology in plants</span>
+        <span class="tag">Comparative genomics</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <div class="section-inner">
+      <p class="eyebrow">Academic Background</p>
+      <h2 class="section-title">Education</h2>
+
+      <div class="edu-item">
+        <div class="role-head">
+          <h3>M.Sc. in Botany</h3>
+          <span class="role-date">2015 – 2017</span>
+        </div>
+        <p class="role-org">
+          Specialization: Genetics, Molecular Genetics &amp; Plant Breeding<br>
+          University of Kalyani, West Bengal, India
+        </p>
+        <p class="edu-result">74.38% — 3rd position in the Department</p>
+      </div>
+
+      <div class="edu-item">
+        <div class="role-head">
+          <h3>B.Sc. (Hons.) in Botany</h3>
+          <span class="role-date">2012 – 2015</span>
+        </div>
+        <p class="role-org">Krishnath College, Murshidabad, West Bengal, India</p>
+        <p class="edu-result">70.87%</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="section" id="awards">
+    <div class="section-inner">
+      <p class="eyebrow">Recognition</p>
+      <h2 class="section-title">Academic Awards &amp; Fellowships</h2>
+
+      <ul class="award-list">
+        <li class="award-row">
+          <span class="award-year">2025</span>
+          <span class="award-desc"><strong>Early Career Award</strong>, Indian Biological Data Centre (DBT)</span>
+        </li>
+        <li class="award-row">
+          <span class="award-year">2023</span>
+          <span class="award-desc"><strong>Shimamoto Award</strong>, International Society for Molecular Plant-Microbe Interactions (IS-MPMI, USA)</span>
+        </li>
+        <li class="award-row">
+          <span class="award-year">2023</span>
+          <span class="award-desc"><strong>SERB International Travel Grant</strong></span>
+        </li>
+        <li class="award-row">
+          <span class="award-year">2026</span>
+          <span class="award-desc"><strong>3rd Position</strong>, Oral Presentation, International Conference</span>
+        </li>
+        <li class="award-row">
+          <span class="award-year">2019</span>
+          <span class="award-desc"><strong>CSIR-UGC NET</strong> (Life Science) — December cycle</span>
+        </li>
+        <li class="award-row">
+          <span class="award-year">2019</span>
+          <span class="award-desc"><strong>CSIR-UGC NET</strong> (Life Science) — June cycle</span>
+        </li>
+        <li class="award-row">
+          <span class="award-year">2018</span>
+          <span class="award-desc"><strong>TIFR-JGEEBILS</strong></span>
+        </li>
+        <li class="award-row">
+          <span class="award-year">2018</span>
+          <span class="award-desc"><strong>GATE</strong> (Life Sciences)</span>
+        </li>
+        <li class="award-row">
+          <span class="award-year">2017</span>
+          <span class="award-desc"><strong>GATE</strong> (Life Sciences)</span>
+        </li>
+        <li class="award-row">
+          <span class="award-year">2017</span>
+          <span class="award-desc"><strong>Prof. S. P. Sen Memorial Award</strong></span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="section-inner">
+      <p class="eyebrow">Toolkit</p>
+      <h2 class="section-title">Technical Skills</h2>
+
+      <div class="skill-grid">
+        <div class="skill-card">
+          <h3>High-Throughput Sequencing</h3>
+          <ul>
+            <li>Illumina</li>
+            <li>PacBio</li>
+            <li>Oxford Nanopore</li>
+            <li>Hi-C</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Computational Biology</h3>
+          <ul>
+            <li>RNA-seq &amp; small RNA-seq</li>
+            <li>Genome assembly</li>
+            <li>3D genome analysis</li>
+            <li>Comparative genomics</li>
+            <li>Large-scale data analysis</li>
+            <li>Python, R</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Molecular Biology</h3>
+          <ul>
+            <li>PCR, qRT-PCR, cloning</li>
+            <li>Transgenic plant development</li>
+            <li>Plant tissue culture</li>
+            <li>Protein analysis (SDS-PAGE, 2D gels, Western blot)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="memberships">
+        <p class="subsection-label">Professional Memberships</p>
+        <ul>
+          <li>International Society for Molecular Plant-Microbe Interactions (IS-MPMI)</li>
+          <li>American Phytopathological Society (APS)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="section" id="publications">
+    <div class="section-inner">
+      <p class="eyebrow">Selected Output</p>
+      <h2 class="section-title">Publications</h2>
+
+      <ol class="pub-list">
+        <li class="pub-item">
+          <span class="pub-num"></span>
+          <div class="pub-text">
+            <span class="pub-authors">Mandal, K., Malar, M., Upadhyay, A., Geeta, A., Ravichandran, V., Bilodeau, G., Corradi, N., Behera, S., &amp; Tripathy, S.</span>
+            (<span class="pub-year">Preprint, 2026</span>).
+            Three-dimensional genome architecture of a pathogenic oomycete provides insights into chromatin organization and regulatory complexity.
+            <br><a class="pub-link" href="https://doi.org/10.21203/rs.3.rs-8096443/v1" target="_blank" rel="noopener">doi.org/10.21203/rs.3.rs-8096443/v1</a>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-num"></span>
+          <div class="pub-text">
+            <span class="pub-authors">Mandal, K., Dutta, S., Upadhyay, A., Panda, A., &amp; Tripathy, S.</span>
+            (<span class="pub-year">2022</span>).
+            Comparative genome analysis across 128 <em>Phytophthora</em> isolates reveals species-specific microsatellite distribution and localized evolution of compartmentalized genomes.
+            <span class="pub-journal">Frontiers in Microbiology</span>, 13:806398.
+            <span class="pub-badge">Equal first author</span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-num"></span>
+          <div class="pub-text">
+            <span class="pub-authors">Dutta, R., Mandal, K., Boro, P., Sultana, S., &amp; Chattopadhyay, S.</span>
+            (<span class="pub-year">2022</span>).
+            Glutathione imparts stress tolerance against <em>Alternaria brassicicola</em> via miRNA-mediated gene regulation.
+            <span class="pub-journal">Plant Signaling &amp; Behavior</span>, 17(1), e2047352.
+            <span class="pub-badge">Equal first author</span>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-num"></span>
+          <div class="pub-text">
+            <span class="pub-authors">Mandal, K., Boro, P., &amp; Chattopadhyay, S.</span>
+            (<span class="pub-year">2021</span>).
+            MicroRNA-based gene regulation: a potential way for crop improvements.
+            <span class="pub-journal">Plant Gene</span>, 27, 100312.
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-num"></span>
+          <div class="pub-text">
+            <span class="pub-authors">Dutta, S., Mandal, K., Upadhyay, A., Das, S., Dey, T., Roy, S. G., &amp; Tripathy, S.</span>
+            (<span class="pub-year">2025</span>).
+            Comparative genome analysis of <em>Phytophthora melonis</em> MCC 9865 WB isolated from Eastern India reveals host-mediated adaptation.
+            <span class="pub-journal">The Nucleus</span>, 1–15.
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-num"></span>
+          <div class="pub-text">
+            <span class="pub-authors">Kant, S., Das, S., Dutta, S., Mandal, K., Upadhyay, A., Sarangi, A. N., et al.</span>
+            (<span class="pub-year">2025</span>).
+            Comparative genomics of endophytic fungus <em>Apiospora malaysiana</em> reveals lifestyle-driven genome adaptation and cellulolytic potential.
+            <span class="pub-journal">DNA Research</span>, 32(3), dsaf011.
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-num"></span>
+          <div class="pub-text">
+            <span class="pub-authors">Kumar, D., Chaudhury, R. S., Mandal, K., Pradhan, P., Bhattacharya, S., Das, B., et al.</span>
+            (<span class="pub-year">2024</span>).
+            Identification of genes associated with β-N-oxalyl-L-α,β-diaminopropionic acid and their role in mitigating salt stress in a low-neurotoxin cultivar of <em>Lathyrus sativus</em>.
+            <span class="pub-journal">Plant Physiology and Biochemistry</span>, 207, 108388.
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-num"></span>
+          <div class="pub-text">
+            <span class="pub-authors">Boro, P., Sultana, A., Mandal, K., &amp; Chattopadhyay, S.</span>
+            (<span class="pub-year">2022</span>).
+            Interplay between glutathione and MAPK3 via WRKY40 under osmotic and cold stress in <em>Arabidopsis</em>.
+            <span class="pub-journal">Journal of Plant Physiology</span>, 153664.
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-num"></span>
+          <div class="pub-text">
+            <span class="pub-authors">Sultana, A., Boro, P., Mandal, K., &amp; Chattopadhyay, S.</span>
+            (<span class="pub-year">2020</span>).
+            AAL-toxin induced stress in <em>Arabidopsis thaliana</em> is alleviated through GSH-mediated salicylic acid and ethylene pathways.
+            <span class="pub-journal">Plant Cell, Tissue and Organ Culture</span>, 141(2), 299–314.
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-num"></span>
+          <div class="pub-text">
+            <span class="pub-authors">Boro, P., Sultana, A., Mandal, K., &amp; Chattopadhyay, S.</span>
+            (<span class="pub-year">2018</span>).
+            Transcriptomic changes under stress conditions with special reference to glutathione contents.
+            <span class="pub-journal">The Nucleus</span>, 61(3), 241–252.
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-num"></span>
+          <div class="pub-text">
+            <span class="pub-authors">Brasier, C. M., Grünwald, N. J., Bourret, T. B., Govers, F., Scanu, B., Cooke, D. E. L., et al., Mandal, K., et al., &amp; Tripathy, S.</span>
+            (<span class="pub-year">2025</span>).
+            Preserving the biologically coherent generic concept of <em>Phytophthora</em>, the "plant destroyer".
+            <span class="pub-journal">Phytopathology</span>, 115(6), 573–586.
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-num"></span>
+          <div class="pub-text">
+            <span class="pub-authors">Saha, A., Banerjee, A., Mandal, K., &amp; Upadhyaya, G.</span>
+            (<span class="pub-year">2026</span>).
+            Potentials and challenges of CRISPR/Cas9 technique for salinity stress management.
+            In <span class="pub-journal">Salinity Stress and Remediation in Agro-Ecosystems</span> (pp. 325–351). Cham: Springer Nature Switzerland.
+            <span class="pub-badge">Book chapter</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-inner">
+      <p class="eyebrow">Reach Out</p>
+      <h2 class="section-title">Contact</h2>
+      <p class="lede">
+        Open to collaborations, postdoctoral opportunities and conversations on
+        oomycete genomics, 3D genome biology and plant–pathogen interactions.
+      </p>
+
+      <dl class="contact-grid">
+        <div class="contact-item">
+          <dt>Email</dt>
+          <dd><em>kajalmandal786@gmail.com</em></dd>
+        </div>
+        <div class="contact-item">
+          <dt>Lab</dt>
+          <dd>Computational Genomics Lab, CSIR-IICB, Kolkata</dd>
+        </div>
+        <div class="contact-item">
+          <dt>ORCID</dt>
+          <dd><em>https://orcid.org/0000-0002-6263-6755</em></dd>
+        </div>
+        <div class="contact-item">
+          <dt>Google Scholar</dt>
+          <dd><em>https://scholar.google.com/citations?user=Aa3N_4wAAAAJ&hl=en</em></dd>
+        </div>
+        <div class="contact-item">
+          <dt>Institute</dt>
+          <dd>CSIR–Indian Institute of Chemical Biology, Kolkata, West Bengal, India</dd>
+        </div>
+        <div class="contact-item">
+          <dt>Affiliation</dt>
+          <dd>AcSIR, CSIR-HRDC Campus, Ghaziabad, U.P., India</dd>
+        </div>
+      </dl>
+
+      <p class="print-note">
+        To save this page as a PDF, press <kbd>Ctrl</kbd> + <kbd>P</kbd>
+        (or <kbd>Cmd</kbd> + <kbd>P</kbd> on Mac) and choose "Save as PDF" — the
+        navigation is hidden automatically in print view.
+      </p>
+    </div>
+  </section>
+
+  <div class="footer-bar">
+    <span>Kajal Mandal — Curriculum Vitae</span>
+    <span>Last updated: <em>[add date]</em></span>
+  </div>
+
+</main>
+
+<script>
+  // Mobile navigation toggle
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var sidebar = document.getElementById('sidebar');
+    toggle.addEventListener('click', function(){
+      var isOpen = sidebar.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+    document.querySelectorAll('.side-nav a').forEach(function(a){
+      a.addEventListener('click', function(){
+        sidebar.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+
+  // Active section highlighting
+  (function(){
+    var links = document.querySelectorAll('.side-nav a');
+    var map = {};
+    links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+
+    var sections = document.querySelectorAll('main section[id]');
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          links.forEach(function(a){ a.classList.remove('active'); });
+          var link = map[entry.target.id];
+          if(link) link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+
+    sections.forEach(function(s){ observer.observe(s); });
+  })();
+
+  // Hi-C style contact map signature visual
+  (function(){
+    var canvas = document.getElementById('hicCanvas');
+    if(!canvas) return;
+    var ctx = canvas.getContext('2d');
+
+    function mulberry32(a){
+      return function(){
+        a |= 0; a = a + 0x6D2B79F5 | 0;
+        var t = Math.imul(a ^ a >>> 15, 1 | a);
+        t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+      };
+    }
+
+    var BG = [243,244,240], TEAL = [44,110,104], GOLD = [201,149,44];
+
+    function lerp(a,b,t){ return a + (b-a)*t; }
+    function lerpColor(c1,c2,t){
+      return [lerp(c1[0],c2[0],t), lerp(c1[1],c2[1],t), lerp(c1[2],c2[2],t)];
+    }
+
+    function buildMatrix(N){
+      var rand = mulberry32(20260112);
+      var blocks = [];
+      var pos = 0;
+      while(pos < N){
+        var size = 3 + Math.floor(rand()*5);
+        blocks.push({start: pos, end: Math.min(N, pos+size), strength: 0.45 + rand()*0.5});
+        pos += size;
+      }
+      var m = [];
+      for(var i=0;i<N;i++){
+        m[i] = [];
+        for(var j=0;j<N;j++){
+          var d = Math.abs(i-j);
+          var v = Math.exp(-d/5.5);
+          for(var k=0;k<blocks.length;k++){
+            var b = blocks[k];
+            if(i>=b.start && i<b.end && j>=b.start && j<b.end){
+              var span = b.end - b.start;
+              var bv = b.strength * (1 - d/Math.max(span,1));
+              if(bv > v) v = bv;
+            }
+          }
+          m[i][j] = Math.max(0, Math.min(1, v));
+        }
+      }
+      return m;
+    }
+
+    function render(){
+      var N = 32;
+      var rect = canvas.getBoundingClientRect();
+      var size = rect.width || 300;
+      var dpr = window.devicePixelRatio || 1;
+      canvas.width = size * dpr;
+      canvas.height = size * dpr;
+      ctx.scale(dpr, dpr);
+      var cell = size / N;
+      var matrix = buildMatrix(N);
+      for(var i=0;i<N;i++){
+        for(var j=0;j<N;j++){
+          var v = matrix[i][j];
+          var color;
+          if(v < 0.5){ color = lerpColor(BG, TEAL, v/0.5); }
+          else { color = lerpColor(TEAL, GOLD, (v-0.5)/0.5); }
+          ctx.fillStyle = 'rgb(' + (color[0]|0) + ',' + (color[1]|0) + ',' + (color[2]|0) + ')';
+          ctx.fillRect(j*cell, i*cell, Math.max(cell-0.5,1), Math.max(cell-0.5,1));
+        }
+      }
+    }
+
+    var resizeTimer;
+    window.addEventListener('resize', function(){
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(render, 150);
+    });
+    render();
+  })();
+</script>
+
+</body>
+</html>

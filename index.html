@@ -194,6 +194,25 @@
     font-size:0.74rem; color:var(--ink-faint); line-height:1.5;
   }
 
+  .hero-photo-wrap{ width:100%; }
+  .hero-photo{
+    width:100%; aspect-ratio:4/5;
+    object-fit:cover;
+    border:1px solid var(--line); border-radius:4px;
+    background:var(--surface);
+  }
+  .hero-photo-strip{
+    margin-top:14px; display:flex; align-items:center; gap:12px;
+  }
+  .hero-photo-strip .hic-mini{
+    width:64px; height:64px; flex:none;
+    border:1px solid var(--line); border-radius:4px;
+  }
+  .hero-photo-caption{
+    font-family:var(--font-mono); font-size:0.74rem;
+    color:var(--ink-faint); line-height:1.5;
+  }
+
   /* ---------- Research roles ---------- */
   .role{ margin-bottom:44px; }
   .role:last-child{ margin-bottom:0; }
@@ -396,11 +415,11 @@
 <body>
 
 <aside class="sidebar" id="sidebar">
-<img src="Picsart_25-12-14_01-36-54-888.jpg" alt="Kajal Mandal" style="width:44px; height:44px; border-radius:50%; object-fit:cover; flex:none; border:1px solid var(--gold);">
+  <div class="brand">
+    <div class="monogram" aria-hidden="true">KM</div>
     <div class="brand-text">
       <p class="side-name">Kajal Mandal</p>
       <p class="side-title">PhD Scholar</p>
-    </div>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sideCollapsible">
       <span></span><span></span><span></span>
@@ -450,9 +469,12 @@
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hic-wrap">
-        <canvas class="hic-canvas" id="hicCanvas" aria-hidden="true"></canvas>
-        <p class="hic-caption">Illustrative chromatin contact map — the kind of data structure at the centre of this research, where blocks of high contact frequency along the diagonal correspond to topologically associating domains.</p>
+      <div class="hero-photo-wrap">
+        <img class="hero-photo" src="photo.jpg" alt="Portrait of Kajal Mandal">
+        <div class="hero-photo-strip">
+          <canvas class="hic-mini" id="hicCanvas" aria-hidden="true"></canvas>
+          <p class="hero-photo-caption">Background: an illustrative Hi-C chromatin contact map — the kind of data structure at the centre of this research.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -825,7 +847,7 @@
       <dl class="contact-grid">
         <div class="contact-item">
           <dt>Email</dt>
-          <dd><em>kajalmandal786@gmail.com</em></dd>
+          <dd><em>[add your email address]</em></dd>
         </div>
         <div class="contact-item">
           <dt>Lab</dt>
@@ -833,11 +855,11 @@
         </div>
         <div class="contact-item">
           <dt>ORCID</dt>
-          <dd><em>https://orcid.org/0000-0002-6263-6755</em></dd>
+          <dd><em>[add your ORCID iD]</em></dd>
         </div>
         <div class="contact-item">
           <dt>Google Scholar</dt>
-          <dd><em>https://scholar.google.com/citations?user=Aa3N_4wAAAAJ&hl=en</em></dd>
+          <dd><em>[add your profile link]</em></dd>
         </div>
         <div class="contact-item">
           <dt>Institute</dt>
@@ -859,7 +881,7 @@
 
   <div class="footer-bar">
     <span>Kajal Mandal — Curriculum Vitae</span>
-    <span>Last updated: <em>June, 2026</em></span>
+    <span>Last updated: <em>[add date]</em></span>
   </div>
 
 </main>
@@ -953,7 +975,7 @@
     }
 
     function render(){
-      var N = 32;
+      var N = 16;
       var rect = canvas.getBoundingClientRect();
       var size = rect.width || 300;
       var dpr = window.devicePixelRatio || 1;

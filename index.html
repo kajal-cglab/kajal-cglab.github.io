@@ -73,6 +73,14 @@
 
   .brand-text{ flex:1; }
 
+  .side-photo{
+    width:120px; height:120px;
+    border-radius:50%; object-fit:cover;
+    border:2px solid var(--gold);
+    margin:20px 0 4px;
+    display:block;
+  }
+
   .side-name{
     font-family:var(--font-display); font-weight:600;
     font-size:1.3rem; line-height:1.25; color:#fff;
@@ -420,6 +428,7 @@
     <div class="brand-text">
       <p class="side-name">Kajal Mandal</p>
       <p class="side-title">PhD Scholar</p>
+      <img class="side-photo" src="Picsart_25-12-14_01-36-54-888.jpg" alt="Portrait of Kajal Mandal">
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sideCollapsible">
       <span></span><span></span><span></span>
@@ -469,12 +478,9 @@
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-photo-wrap">
-        <img class="hero-photo" src="Picsart_25-12-14_01-36-54-888.jpg" alt="Portrait of Kajal Mandal">
-        <div class="hero-photo-strip">
-          <canvas class="hic-mini" id="hicCanvas" aria-hidden="true"></canvas>
-          <p class="hero-photo-caption">Background: an illustrative Hi-C chromatin contact map — the kind of data structure at the centre of this research.</p>
-        </div>
+      <div class="hic-wrap">
+        <canvas class="hic-canvas" id="hicCanvas" aria-hidden="true"></canvas>
+        <p class="hic-caption">Illustrative chromatin contact map — the kind of data structure at the centre of this research, where blocks of high contact frequency along the diagonal correspond to topologically associating domains.</p>
       </div>
     </div>
   </section>
@@ -975,7 +981,7 @@
     }
 
     function render(){
-      var N = 16;
+      var N = 32;
       var rect = canvas.getBoundingClientRect();
       var size = rect.width || 300;
       var dpr = window.devicePixelRatio || 1;
